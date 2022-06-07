@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main/main.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container column">
+    <div class="main-text">
+        Добро пожаловать на сервис "IRentor"! Здесь вы можете взять в аренду
+        оборудование, которым располагает спортивный комплекс IREN, находящийся по адресу ул. 40 лет Октября, дом 12
+        <br>Добро пожаловать, <span sec:authentication="name"></span>
+<!--        <br><p th:text="${test}"></p>-->
+    </div>
+    <div class="btns" sec:authorize="!isAuthenticated()">
+        <a href="/registration" class="main-reg">Регистрация</a>
+        <a href="/login" class="main-entir">Вход</a>
+    </div>
+</div>
+</body>
+</html>

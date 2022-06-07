@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin/users.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+
+<div class="container">
+    <div class="title">
+        Пользователи
+    </div>
+    <table class="users">
+        <tr th:each="el : ${users}" class="users__item">
+            <th th:text="${el.login}" class="users__text">
+            </th>
+            <th>
+                <a th:text="${el.email}" class="users__email">
+                </a>
+            </th>
+            <th class="users__btn">
+                <form method="post" action="/admin/users">
+                    <input type="hidden" name="id" th:value="${el.id}"/>
+                    <input type="hidden" name="action" value="delete"/>
+                    <button type="submit" class="remove-btn">Удалить</button>
+                </form>
+            </th>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>

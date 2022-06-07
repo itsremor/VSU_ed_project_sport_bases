@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/service/catalog.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="filters_background"></div>
+<div class="row container">
+    <div class="filters">
+        <div class="filters__main-title">Фильтры</div>
+        <div class="filters__price">
+            <div class="filters__title">
+                Цена
+            </div>
+            <div class="container_slider">
+                <div class="slider-wrapper">
+                    <div id="slider-range"></div>
+
+                    <div class="range-wrapper">
+                        <div class="row">
+                            <div class="range1"></div>
+                            <div class="range-divider"></div>
+                            <div class="range2"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="multiselect">
+            <div class="selectBox" onclick="showCheckboxes()">
+                <select name="category" class="option-select">
+                    <option selected disabled>Выберите категорию</option>
+                    <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}">
+                    </option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="catalog">
+        <div th:each="el : ${items}" class="catalog__items">
+            <div class="item row center">
+                <img class="catalog__item-img" src="../../images/producct-img.png" alt="">
+                <div>
+<!--                    <div th:text="${el.category}" class="catalog__item-title">-->
+<!--                    </div>-->
+                    <div class="row center">
+                        <div th:text="${el.description}" class="catalog__item-description">
+                        </div>
+                        <a th:href="@{'/service/order/' + ${el.id}}" class="catalog__item-btn-link">Забронировать</a>
+                        <div th:text="${el.price} + ' р/ч' " class="catalog__item-price">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="../../js/service/catalog.js"></script>
+
+</html>

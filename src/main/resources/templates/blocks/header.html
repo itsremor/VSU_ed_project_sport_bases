@@ -1,0 +1,69 @@
+<div class="container" th:fragment="header">
+    <div class="row menu center">
+        <a href="#" class="logo">
+            <img src="../../images/logo2.svg" alt="">
+        </a>
+        <div class="header__center row">
+
+            <!--            для всех-->
+            <div class="nav">
+                <a href="/" class="nav__link">
+                    Главная страница
+                </a>
+            </div>
+
+            <!--            для всех зареганый-->
+            <div class="nav" sec:authorize="isAuthenticated()">
+                <a href="/logout" class="nav__link">
+                    Выход
+                </a>
+            </div>
+
+            <!--            для юзера-->
+            <div class="nav" th:if="${user}">
+                <a href="/service/catalog" class="nav__link">
+                    Каталог
+                </a>
+            </div>
+            <div class="nav" th:if="${user}">
+                <a href="/service/balance" class="nav__link">
+                    Баланс
+                </a>
+            </div>
+
+            <!--            не для админа-->
+            <div class="nav" th:if="!${admin}">
+                <a href="/resources/about" class="nav__link">
+                    О компании
+                </a>
+            </div>
+
+
+            <!--            для админа-->
+            <div class="nav" th:if="${admin}">
+                <a href="/admin/add-item" class="nav__link">
+                    Добавить товар
+                </a>
+            </div>
+            <div class="nav" th:if="${admin}">
+                <a href="/admin/users" class="nav__link">
+                    Пользователи
+                </a>
+            </div>
+            <div class="nav" th:if="${admin}">
+                <a href="/admin/orders" class="nav__link">
+                    Заказы
+                </a>
+            </div>
+
+<!--            нормально сделать иконку пользователя-->
+            <div class="header__right row" th:if="${user}">
+                <div class="pa">
+                    <a href="/user/profile">
+                        <img src="../../images/pa.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

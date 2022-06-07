@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/user/change_email.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div>
+    <div class="container">
+        <form method="post" action="/user/email" class="profile">
+            <img class="profile-img" src="../../images/pa.svg" alt="">
+            <div th:text="${name} + ' ' + ${surname}" class="profile-name"></div>
+            <div th:text="${login}" class="profile-nickname"></div>
+            <div th:text="${email}" class="profile-email"></div>
+            <div class="input">
+                <input type="email" maxlength="40" name="oldEmail" class="some-input" placeholder="Введите старый email">
+            </div>
+            <div class="input">
+                <input type="email" maxlength="40" name="newEmail" class="some-input" placeholder="Введите новый email">
+            </div>
+            <div class="btn">
+                <button type="submit" class="profile-btn">
+                    Сменить email
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

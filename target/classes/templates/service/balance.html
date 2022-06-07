@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Au</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/service/balance.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container">
+    <div class="balance">
+        <p th:text="'Ваш баланс составляет : ' + ${balance} + ' руб'"/>
+    </div>
+
+    <form class="balance-form" method="post" action="/service/balance">
+        <div class="input">
+            <input type="text" name="card" maxlength="10" class="some-input" placeholder="Введите номер карты">
+        </div>
+        <div class="input">
+            <input type="text" name="cvv" maxlength="3" class="some-input" placeholder="CVV">
+        </div>
+        <div class="input">
+            <input type="number" name="sum" class="some-input" placeholder="Сумма">
+        </div>
+        <div class="btn">
+            <button type="submit" class="profile-btn">Пополнить баланс</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

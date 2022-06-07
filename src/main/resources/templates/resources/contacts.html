@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--html тег с тилифом-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <!--    изменение ссылки на стили
+    /css/*имя папки*/*имя файла*.css
+    -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/resources/contacts.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!--подключение хедера-->
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container column">
+    <div class="contacts-text">
+        Тех поддержка<br/>Дорогие друзья!
+        Если возникли какие-то трудности с использованием сервиса - просим Вас обратиться на почту
+        irentor.help@gmail.com<br/>@email
+    </div>
+</div>
+</body>
+
+</html>
