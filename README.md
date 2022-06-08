@@ -1,6 +1,7 @@
 # Веб-сервис аренды спортивного и иного инвентаря "IRentor"
 
 ## Ссылка на основную документацию
+* [Ссылка на видео по проекту, презентацию и видео по презентации](https://drive.google.com/drive/folders/1r4cnYWdNBCqRKm9M2ncTN2WJyVPk9xFx?usp=sharing)
 * [Ссылка на Confluence (обзор по проекту, основные сведения)](https://clck.ru/drEEH)
 * [Ссылка на Jira](https://clck.ru/drEE5)
 * [Ссылка на Miro](https://clck.ru/gcS2N)
