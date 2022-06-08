@@ -4,8 +4,8 @@
 * [Ссылка на Confluence (обзор по проекту, основные сведения)](https://clck.ru/drEEH)
 * [Ссылка на Jira](https://clck.ru/drEE5)
 * [Ссылка на Miro](https://clck.ru/gcS2N)
-* [Ссылка на техническое задание](https://clck.ru/drECo)
-* [Ссылка на курсовую работу](https://drive.google.com/file/d/1OvBrhHi81u5RQZnCZNq6LBfGMebWfavW/view?usp=sharing)
+* [Ссылка на ветку с техническим заданием](https://github.com/itsremor/VSU_ed_project_sport_bases/tree/documentation)
+* [Ссылка на курсовую работу](https://drive.google.com/file/d/1bglpJ0B9vXbc_fEPu_j2hNguabdHmZnV/view?usp=sharing)
 
 ## Контактные данные
 
