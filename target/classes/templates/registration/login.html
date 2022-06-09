@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Au</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration/login.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <form class="reg" method="post" action="/login">
+        <div class="input">
+            <input type="text" maxlength="25" name="username" class="some-input" placeholder="Логин">
+        </div>
+        <div class="input">
+            <input type="password" maxlength="25" name="password" class="some-input" placeholder="Пароль">
+        </div>
+        <div class="btn">
+            <button type="submit" class="profile-btn">Вход</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

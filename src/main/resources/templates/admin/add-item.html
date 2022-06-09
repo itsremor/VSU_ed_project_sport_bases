@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin/add-item.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+<form method="post" action="/admin/add-item" class="container">
+    <input name="price" type="number" placeholder="Аренда в час" class="name-inputt">
+    <div class="row add-product">
+        <div class="column">
+            <input name="name" type="text" placeholder="Имя товара" class="name-input">
+            <input name="description" type="text" placeholder="Описание товара" class="discript-input">
+        </div>
+        <div>
+            <div>
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes()">
+                        <select name="category" class="option-select">
+                            <option selected disabled>Выберите категорию</option>
+                            <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn">
+        <button type="submit" class="profile-btn">Добавить</button>
+    </div>
+</form>
+</body>
+<script src="../../js/admin/add-item.js"></script>
+</html>

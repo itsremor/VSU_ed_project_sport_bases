@@ -1,0 +1,120 @@
+.main-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../../images/main.png) no-repeat fixed;
+    background-size: cover;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 30px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.menu {
+    padding: 15px 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.center {
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.header__center {
+    text-align: center;
+}
+
+.nav {
+    margin-right: 75px;
+}
+
+.nav__link {
+    color: #2C98F0;
+    font-family: 'Roboto';
+    font-weight: 900;
+}
+
+.basket {
+    margin-right: 20px;
+}
+
+.profile {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 40px 60px;
+    background-color: #fff;
+    text-align: center;
+
+    border: 1px solid #F5F5F5;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.profile-img {
+    width: 20%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    font-size: 25px;
+    font-family: 'Roboto';
+    color: #2C98F0;
+    margin-bottom: 15px;
+
+}
+
+.profile-nickname,
+.profile-email {
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: #2C98F0;
+    margin-bottom: 5px;
+
+}
+
+
+.profile-btn {
+    font-size: 12px;
+    font-family: 'Roboto';
+    color: #2C98F0;
+    white-space: nowrap;
+    border: 2px solid #2C98F0;
+    border-radius: 16px;
+    margin-top: 20%;
+    padding: 10px 10px;
+}

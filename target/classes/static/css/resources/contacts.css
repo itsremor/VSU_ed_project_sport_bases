@@ -1,0 +1,82 @@
+.main-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../../images/main.png) no-repeat fixed;
+    background-size: cover;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 30px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.menu {
+    padding: 15px 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.center {
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.header__center {
+    text-align: center;
+}
+
+.nav {
+    margin-right: 75px;
+}
+
+.nav__link {
+    color: #2C98F0;
+    font-family: 'Roboto';
+    font-weight: 900;
+}
+
+.basket {
+    margin-right: 20px;
+}
+
+.contacts-text {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 25px;
+    color: #2C98F0;
+    max-width: 1000px;
+    margin-top: 180px;
+}

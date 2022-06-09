@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Au</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/service/make-order.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div>
+    <div class="container">
+        <div class="title">
+            Оформление заказа
+        </div>
+        <div class="item row center">
+            <img class="catalog__item-img" src="../../images/producct-img.png" alt="">
+            <div>
+                <div th:text="${item.name}" class="catalog__item-title">
+                </div>
+                <div class="row center">
+                    <div th:text="${item.description}" class="catalog__item-description">
+                    </div>
+                    <div th:text="${item.price} + ' р/ч'" class="catalog__item-price">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form method="post" th:action="'/service/order/' + ${id}" class="balance-form">
+            <div class="input">
+                <input type="date" name="startDate" class="some-input" placeholder="Дата аренды дд:мм:гг">
+            </div>
+            <div class="input">
+                <input type="time" name="startTime" class="some-input" placeholder="С какого времени чч:мм">
+            </div>
+            <div class="input">
+                <input type="number" name="duration" class="some-input" placeholder="Количество часов">
+            </div>
+            <div class="btn">
+                <button type="submit" class="profile-btn">
+                    Оформить заказ
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

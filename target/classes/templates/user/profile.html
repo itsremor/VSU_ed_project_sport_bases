@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/user/profile.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+    <div>
+
+        <div class="container">
+            <div class="profile">
+                <img class="profile-img" src="../../images/pa.svg" alt="">
+                <div th:text= "${name} + ' ' + ${surname}" class="profile-name"></div>
+                <div th:text= "${login}" class="profile-nickname"></div>
+                <div th:text= "${email}" class="profile-email"></div>
+                <div class="row">
+                    <a href="/service/orders" class="profile-btn">
+                        История заказов
+                    </a>
+                    <a href="/user/password" class="profile-btn">
+                        Сменить пароль
+                    </a>
+                    <a href="/user/email" class="profile-btn">
+                        Сменить email
+                    </a>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Au</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration/registration.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <form class="auth" method="post" action="/registration">
+        <div class="input">
+            <input type="text" name="name" maxlength="15" class="some-input" placeholder="Имя">
+        </div>
+        <div class="input">
+            <input type="text" name="surname" maxlength="25" class="some-input" placeholder="Фамилия">
+        </div>
+        <div class="input">
+            <input type="text" name="email" maxlength="40" class="some-input" placeholder="Email">
+        </div>
+        <div class="input">
+            <input type="text" name="login" maxlength="25" class="some-input" placeholder="Логин">
+        </div>
+        <div class="input">
+            <input type="password" maxlength="25" name="password" class="some-input" placeholder="Пароль">
+        </div>
+        <div class="input">
+            <input type="password" maxlength="25" name="passwordConfirm" class="some-input" placeholder="Повторите пароль">
+        </div>
+        <div class="btn">
+            <button type="submit" class="profile-btn">Регистрация</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

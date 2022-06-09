@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Orders confirmation</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin/orders-confirmation.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container">
+    <div class="title">
+        Подтверждение заказов
+    </div>
+    <div class="error-container" th:if="${error != null}" th:text="${error}"></div>
+</div>
+
+
+
+
+
+    <div class="search">
+        <input type="search" name="Введите номер заказа" id="" class="search-input" placeholder="Введите номер заказа">
+        <img class="search-icon" src="../../images/search.svg" alt="">
+    </div>
+
+    <table>
+        <tr th:each="el : ${orders}">
+            <th th:text="'№' + ${el.id}" class="orders__text">
+            </th>
+            <th th:text="${el.start}" class="orders__text">
+            </th>
+            <th th:text="'на сумму : ' + ${el.price} + ' руб'" class="orders__text">
+            </th>
+            <th th:text="${el.user}" class="orders__text">
+            </th>
+            <th>
+                <div class="row">
+                    <form method="post" action="/admin/orders" class="orders__btn">
+                        <input type="hidden" name="id" th:value="${el.id}"/>
+                        <input type="hidden" name="action" value="accept"/>
+                        <button type="submit" class="orders__btn-link">Принять</button>
+                    </form>
+                    <form method="post" action="/admin/orders" class="orders__btn">
+                        <input type="hidden" name="id" th:value="${el.id}"/>
+                        <input type="hidden" name="action" value="decline"/>
+                        <button type="submit" class="orders__btn-link">Отклонить</button>
+                    </form>
+                </div>
+            </th>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Orders history</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/service/order-history.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+
+<div>
+
+    <div class="container">
+        <div class="title">
+            Ваша история заказов
+        </div>
+        <table class="order-history">
+            <tr th:each="el : ${orders}" class="order-history__item">
+                <th th:text="'№' + ${el.id}" class="order-history__text">
+                </th>
+                <th th:text="${el.start}" class="order-history__text">
+                </th>
+                <th th:text="'на сумму : ' + ${el.price} + ' руб'" class="order-history__text">
+                </th>
+            </tr>
+        </table>
+        <div class="btns">
+            <div class="btn">
+                <a href="#" class="btn-link">
+                    Предыдущая страница
+                </a>
+            </div>
+            <div class="btn">
+                <a href="#" class="btn-link">
+                    Следующая страница
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
